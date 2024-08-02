@@ -8,6 +8,7 @@
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0"
         />
         <link rel="stylesheet" href="./styles/style.css" />
+        <link rel="shortcut icon" href="./assets/logoEncriptador.png.png" type="image/x-icon">
         <title>Encriptador de Texto</title>
     </head>
     <body>
@@ -19,7 +20,7 @@
 
             <nav class="header__nav">
                 <li class="nav__li">
-                    <a href="./index.html" class="nav__li__link">Encriptador</a>
+                    <a href="./index.html" class="nav__li__link nav__li__link-active">Encriptador</a>
                 </li>
                 <li class="nav__li">
                     <a href="./pages/informacion.html" class="nav__li__link"
@@ -38,9 +39,9 @@
                 ></textarea>
 
                 <div class="main__encrypt__action">
-                    <p class="encrypt__action__info">
+                    <p class="encrypt__action__info" id='warningText'>
                         <span class="material-symbols-outlined"> info </span
-                        >Solo letras minúsculas y sin acentos
+                        >Solo letras minúsculas, sin acentos ni caracteres especiales
                     </p>
 
                     <div class="encrypt__action__buttons">
@@ -68,7 +69,16 @@
         </main>
 
         <footer class="footer">
-            <p>Kevin Maximiliano Palma Romero - 21 años</p>
+            <div class="footer__link">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+                
+                <a class="footer__link__a" href="www.linkedin.com/in/kevin-maximiliano-palma-romero" target="_blank">Kevin Maximiliano Palma Romero</a>
+            </div>
+
+            <div class="footer__link">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-gmail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 20h3a1 1 0 0 0 1 -1v-14a1 1 0 0 0 -1 -1h-3v16z" /><path d="M5 20h3v-16h-3a1 1 0 0 0 -1 1v14a1 1 0 0 0 1 1z" /><path d="M16 4l-4 4l-4 -4" /><path d="M4 6.5l8 7.5l8 -7.5" /></svg>
+                <a class="footer__link__a" href="mailto:kev.mpr03@gmail.com?subject=Oferta Laboral" target="_blank">kev.mpr03@gmail.com</a>
+            </div>
         </footer>
         <script src="./js/main.js"></script>
     </body>

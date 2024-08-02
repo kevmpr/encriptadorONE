@@ -1,3 +1,23 @@
+function validation(text) {
+    const pattern = new RegExp("^[a-z0-9 ]+$");
+
+    const warningText = document.getElementById('warningText');
+
+    if(text == "") {
+        warningText.style.color="#495057";
+        return false
+    }
+    else if (!pattern.test(text)) {
+        console.log('No se permiten letras mayusculas')
+        warningText.style.color="red";
+        return false
+    }
+    else{
+        warningText.style.color="#495057";
+        return true
+    }
+}
+
 function encryptWarning() {
     let messageWarning = document.getElementById("message");
     messageWarning.className = "main__message";
@@ -32,7 +52,7 @@ function encryptSuccess(textToEncrypt) {
     let messageEncrypted = document.getElementById("message");
 
     messageEncrypted.className = "main__message main__message-encrypted";
-    messageEncrypted.innerHTML = `<p class="message__textEncrypted" id="messageEncrypted">${textToEncrypt}</p>
+    messageEncrypted.innerHTML = `<textarea class="message__textEncrypted" id="messageEncrypted" readonly>${textToEncrypt}</textarea>
     
     <button class="button" onclick='copyText()'>Copiar texto</button>
     `;
@@ -41,7 +61,9 @@ function encryptSuccess(textToEncrypt) {
 function encrypt() {
     let textToEncrypt = document.getElementById("messageToEncrypt").value;
 
-    if (textToEncrypt == "") {
+    const isValid = validation(textToEncrypt);
+
+    if (isValid == false) {
         encryptWarning();
     } else {
         encryptSuccess(textToEncrypt);
@@ -49,11 +71,13 @@ function encrypt() {
 }
 
 function decryptSuccess(textToDecrypt) {
-    while(textToDecrypt.includes('imes') ||
-    textToDecrypt.includes('enter') ||
-    textToDecrypt.includes('ai') ||
-    textToDecrypt.includes('ober') ||
-    textToDecrypt.includes('ufat')){
+    while (
+        textToDecrypt.includes("imes") ||
+        textToDecrypt.includes("enter") ||
+        textToDecrypt.includes("ai") ||
+        textToDecrypt.includes("ober") ||
+        textToDecrypt.includes("ufat")
+    ) {
         textToDecrypt = replaceLetters(textToDecrypt, "imes", "i");
 
         textToDecrypt = replaceLetters(textToDecrypt, "enter", "e");
@@ -64,7 +88,7 @@ function decryptSuccess(textToDecrypt) {
 
         textToDecrypt = replaceLetters(textToDecrypt, "ufat", "u");
     }
-    
+
     let messageEncrypted = document.getElementById("message");
 
     messageEncrypted.className = "main__message main__message-encrypted";
