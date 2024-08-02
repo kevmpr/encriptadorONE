@@ -31,11 +31,11 @@
 
         <main class="main">
             <div class="main__encrypt">
-                <input
-                    type="text"
-                    placeholder="Ingrese el texto aquí"
+                <textarea
                     class="main__encrypt__input"
-                />
+                    id="messageToEncrypt"
+                    placeholder="Ingrese el texto aqui"
+                ></textarea>
 
                 <div class="main__encrypt__action">
                     <p class="encrypt__action__info">
@@ -44,25 +44,32 @@
                     </p>
 
                     <div class="encrypt__action__buttons">
-                        <button class="button">Encriptar</button>
-                        <button class="button">Desencriptar</button>
+                        <button class="button" onclick="encrypt()">
+                            Encriptar
+                        </button>
+                        <button class="button" onclick="decrypt()">
+                            Desencriptar
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <div class="main__message">
+            <div class="main__message" id="message">
                 <img
                     src="./assets/muñecoMensaje.png"
                     alt="muñeco buscando el texto"
                     class="message__img"
                 />
                 <p class="message__warning">Ningún mensaje fue encontrado</p>
-                <p class="message__info">Ingrese el texto que desees encriptar o desencriptar</p>
+                <p class="message__info">
+                    Ingrese el texto que desees encriptar o desencriptar
+                </p>
             </div>
         </main>
 
         <footer class="footer">
             <p>Kevin Maximiliano Palma Romero - 21 años</p>
         </footer>
+        <script src="./js/main.js"></script>
     </body>
 </html>
