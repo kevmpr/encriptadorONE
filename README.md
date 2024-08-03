@@ -28,4 +28,4 @@
 </ul>
 
 <h2>URL del sitio web</h2>
-<a href="https://kevmpr.github.io/encriptadorONE/">Click para ir al sitio web</a>
+<a href="https://kevmpr.github.io/encriptadorONE/" target="_blank">Click para ir al sitio web</a>
